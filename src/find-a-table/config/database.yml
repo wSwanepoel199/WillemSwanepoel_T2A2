@@ -20,6 +20,9 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: wswanepoel
+  password: 7h3m4n0n7h3m00n
+  host: localhost
 
 development:
   <<: *default
@@ -82,5 +85,5 @@ test:
 production:
   <<: *default
   database: find_a_table_production
-  username: find_a_table
-  password: <%= ENV['FIND_A_TABLE_DATABASE_PASSWORD'] %>
+  # username: find_a_table
+  # password: <%= ENV['FIND_A_TABLE_DATABASE_PASSWORD'] %>
