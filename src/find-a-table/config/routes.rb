@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   # root to: "pages#home"
   root 'pages#home'
   get 'listings', to: 'listings#index'
-  get 'listings/show'
+  get 'listings/show', to: 'listings#show'
   get 'listings/new', to: 'listings#new'
   get 'listings/edit', to: 'listings#edit'
-  get '/tagged', to: "listings#tagged", as: :tagged
+  get '/tagged', to: 'listings#tagged', as: :tagged
 
 end
