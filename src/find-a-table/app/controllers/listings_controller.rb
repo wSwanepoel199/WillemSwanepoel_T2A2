@@ -1,25 +1,28 @@
 class ListingsController < ApplicationController
   
   def index
-    params[:tag] ? @posts = Listing.tagged_with(params[:tag]) : @posts = Listing.all
+    params[:tag] ? @listing = Listing.tagged_with(params[:tag]) : @listing = Listing.all
   end
  
   def show
-    @post = Listing.find(params[:id])
+    @listing = Listing.find(params[:id])
   end
   def new
-    @post = Listing.new
+    @listing = Listing.new
   end
   def create
-    @post = Listing.new(post_params)
-    if @post.save
-      redirect_to @post
+    @listing = Listing.new(listing_params)
+    if @listing.save
+      redirect_to @listing
     else
       render :new
     end
   end
+  def edit
+    @listing = Listing.find(params[:id])
+  end
   private
-def post_params
+def listing_params
     params.require(:listing).permit(:title, :content, :tag_list, :tag, { tag_ids: [] }, :tag_ids)
   end
 end

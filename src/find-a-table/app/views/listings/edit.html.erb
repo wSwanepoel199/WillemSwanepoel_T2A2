@@ -1,6 +1,6 @@
 <div class = 'col-md-8 offset-2'>
   <h1 class = "text-center">New Blog Post</h1>
-  <%= simple_form_for @listing, url: listings_path do |f| %>
+  <%= simple_form_for @listing, url: edit_listing do |f| %>
     <%= f.input :title %>
     <%= f.input :content %>
     <%= f.input :tag_ids, as: :select, collection: Tag.order(:name), label_method: :name, input_html: {multiple: true} %>

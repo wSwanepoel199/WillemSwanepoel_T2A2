@@ -1,9 +1,11 @@
 class Listing < ApplicationRecord
+  belongs_to :user
   has_many :taggings
   has_many :tags, through: :taggings
 
+  
   def self.tagged_with(name)
-    Tag.find_by!(name: name).listing
+    Tag.find_by!(name: name).listings
   end
 
   def self.tag_counts

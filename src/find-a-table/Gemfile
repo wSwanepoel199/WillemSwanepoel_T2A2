@@ -55,3 +55,9 @@ gem "devise"
 
 gem 'rack-mini-profiler', '~> 2.0'
 gem 'simple_form'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.3.3' 
+  # add the line below
+  gem 'rails-assets-chosen'
+end
