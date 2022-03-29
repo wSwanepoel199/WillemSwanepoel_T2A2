@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :listing do
     title { "MyString" }
-    content { "MyText" }
+    description { "MyText" }
+    user { nil }
   end
 end
