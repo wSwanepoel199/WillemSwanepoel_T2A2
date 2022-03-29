@@ -1,22 +1,10 @@
-<h1>Blog Posts</h1>
-<div class = "col-md-8 offset-2">
-  <% @listing.each do |post| %>
-    <h2><%= post.title %></h2>
-    <p><%=truncate(post.description, length: 50) %></p>
-    <p><small><% post.tag_list.each do |tag| %>
-    <%= link_to tag, tagged_path(tag: tag) %>
-  <% end %></small></p>
-    <p><%= link_to "Read Post", listing_path(post) %></p>
-  <% end %>
-</div>
-
-<h1>Listings#index</h1>
-<p>Find me in app/views/listings/index.html.erb</p>
+<h1>Listings#tagged</h1>
+<p>Find me in app/views/listings/tagged.html.erb</p>
 
 <h1 class="hero-title text-center">Listings</h1>
 <section class="container">
   <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-4 justify-content-center">
-    <%=@listing.each do |listing|%>
+    <%@listing.each do |listing|%>
       <div class="col md-4">
         <div class="card border-dark h-100">
           <div class="card-body">
@@ -26,7 +14,7 @@
             <%listing.tag_list.each do |tag| %>
               <%= link_to tag, tagged_path(tag: tag) %>
             <%end%></small></p>
-            <p><%= link_to "Read Listing", listings_path(listing) %></p>
+            <p><%= link_to "Read Listing", listing_path(listing) %></p>
           </div>
         </div>
       </div>
