@@ -1,5 +1,4 @@
-class Listing < ApplicationRecord::Base
-  attr_accessible :tag_list
+class Listing < ApplicationRecord
   belongs_to :user
-  acts_as_taggable
+  acts_as_taggable_on :tags
 end
