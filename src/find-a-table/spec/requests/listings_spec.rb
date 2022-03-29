@@ -8,13 +8,6 @@ RSpec.describe "Listings", type: :request do
     end
   end
 
-  describe "GET /show" do
-    it "returns http success" do
-      get "/listings/show"
-      expect(response).to have_http_status(:success)
-    end
-  end
-
   describe "GET /new" do
     it "returns http success" do
       get "/listings/new"
@@ -22,9 +15,9 @@ RSpec.describe "Listings", type: :request do
     end
   end
 
-  describe "GET /edit" do
+  describe "GET /show" do
     it "returns http success" do
-      get "/listings/edit"
+      get "/listings/show"
       expect(response).to have_http_status(:success)
     end
   end
