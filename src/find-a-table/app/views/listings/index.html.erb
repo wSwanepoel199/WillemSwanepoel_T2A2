@@ -1,0 +1,9 @@
+<h1>Create Listing</h1>
+<div class = "col-md-8 offset-2">
+  <% @posts.each do |post| %>
+    <h2><%= post.title %></h2>
+    <p><%= truncate(post.content, length: 50) %></p>
+    <p><small>Tags: <%= raw post.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></small</p>
+    <p><%= link_to "Read Post", post_path(post) %></p>
+  <% end %>
+</div>
