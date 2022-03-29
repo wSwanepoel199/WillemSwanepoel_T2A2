@@ -1,11 +1,7 @@
-<h1>Listings#index</h1>
-<p>Find me in app/views/listings/index.html.erb</p>
+<h1>Listings#tagged</h1>
+<p>Find me in app/views/listings/tagged.html.erb</p>
 
 <h1 class="hero-title text-center">Listings</h1>
-<%=simple_form_for @listing_search, url: listings_path do |f|%>
-  <%=f.input :title, as: :search%>
-  <%=f.submit "Search"%>
-<%end%>
 <section class="container">
   <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-4 justify-content-center">
     <%@listing.each do |listing|%>

@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   get 'listings/new', to: 'listings#new'
   get 'listings/edit', to: 'listings#edit'
   get '/tagged', to: 'listings#tagged', as: :tagged
+  get '/search', to: 'listings#search', as: :search
 
 end

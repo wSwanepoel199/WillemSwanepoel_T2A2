@@ -3,6 +3,7 @@ class ListingsController < ApplicationController
   
   def index
     @listing = Listing.all
+    @listing_search= Listing.new
   end
 
   def show
@@ -23,6 +24,14 @@ class ListingsController < ApplicationController
     end
   end
 
+  def search
+    if params[:search].present?
+      @listing = Listing.global_search(params[:search])
+    else
+      @listing = Listing.all
+    end
+  end
+
   def create
     @listing = Listing.new(listing_params)
     if @listing.save
@@ -38,6 +47,6 @@ class ListingsController < ApplicationController
   
   private
   def listing_params
-    params.require(:listing).permit(:title, :description, :user_id, :tag_list)
+    params.require(:listing).permit(:title, :description, :user_id, :tag_list, :search)
   end
 end
