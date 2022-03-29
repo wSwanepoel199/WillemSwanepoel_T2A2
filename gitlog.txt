@@ -1,0 +1,95 @@
+commit 14d76dcd08730a0b9e33b4a4ac3aa5941534f9f2
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Tue Mar 29 14:58:21 2022 +1100
+
+    Removed previously implimented tables, implimented ActsAsTaggable gem, remade listings table
+
+commit 7cc3ec5e6228f4c99ee5be4cc77454c2c64e24da
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Tue Mar 29 13:52:31 2022 +1100
+
+    setting up listings, ability to greate listings and ability to tag listings
+
+commit 862ec6e9c0da0b95eabb01217207396233f1ff8a
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Tue Mar 29 12:31:11 2022 +1100
+
+    forgot to move simple_form to general, fixed it up
+
+commit df2356f3fa3413ca221012a8818959589b671314
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Tue Mar 29 12:29:44 2022 +1100
+
+    moved mini-profiler form dev to general
+
+commit 67e7b76ae1264da72a65538b0aa2d2157ea19eea
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Tue Mar 29 12:26:52 2022 +1100
+
+    installed simple form, greated listings model and db, greated tags model and db, created tagging model and joined listings and tags, created assosications though models, seeded base info into tags db, started work on form views
+
+commit 660430c438460939f466ca5a50af043d8825ac63
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Tue Mar 29 10:41:09 2022 +1100
+
+    removed mini-profiler required
+
+commit dedc77cdf47076234160165d371a9a317b7e1368
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Tue Mar 29 10:37:34 2022 +1100
+
+    set mini-profiler to be required in gemfile
+
+commit 279abc435134b0bd64c1560b74c890cf1d67e081
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Tue Mar 29 10:23:05 2022 +1100
+
+    Added config setting for mini-profiler, set mini-profiler to start as hidden, set con-log note to remind how to turn on mini-profiler, improved navbar
+
+commit 83d330e8dbd6dffd4b2ead4da078cbad025428ca
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Mon Mar 28 18:01:31 2022 +1100
+
+    fixed errors in README
+
+commit 2a26e1ea8fd464fb2c2cc7799e0f7c3eb9e3c6cc
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Mon Mar 28 16:57:47 2022 +1100
+
+    implimented bootstrap navbar, implimented logic to alter colour of flash message
+
+commit dd38dcd05d242b1d73f86a62fe97b02a71713207
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Mon Mar 28 16:36:26 2022 +1100
+
+    generated devised views, generated user model, implimented basic authentication
+
+commit 16280857fd515ee558289f6221f2b0674aae105f
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Mon Mar 28 15:33:18 2022 +1100
+
+    added devise and set up basic infrustructure, attempting to generate views, unseccessfully
+
+commit b1d1ed0f6f1bd7b1154f936f3a8905e08e29f2a5
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Mon Mar 28 14:10:04 2022 +1100
+
+    generated pages, testing bootstrap, commented out config.file_watcher in config/enviroment/development.rb due to this preventing views from updating
+
+commit d0e1a021142065a20cd990c67410051501f51b35
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Mon Mar 28 13:50:04 2022 +1100
+
+    added bootstrap, jquery and popper.js, modified rails to use bootstrap
+
+commit 5a0cb8fc9406b877e69cc69b9d1b9d5676e2ae54
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Mon Mar 28 13:38:14 2022 +1100
+
+    installed gems, started configuration for tags, setup rspec and factorybot
+
+commit a844f19ba2aa57e1d672acec64bb6046264418ba
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Fri Mar 25 19:48:11 2022 +1100
+
+    first commit

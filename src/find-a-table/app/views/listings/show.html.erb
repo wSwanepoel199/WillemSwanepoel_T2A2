@@ -1,0 +1,13 @@
+<h1>Listings#show</h1>
+<p>Find me in app/views/listings/show.html.erb</p>
+
+<h1 class="hero-title text-center">Create Listing</h1>
+<section class="container">
+  <div class = "col row-col-sm-8 row-col-md-8 row-col-lg-8">
+    <h1><%=@listing.title%></h1>
+    <p><%=@listing.description%></p>
+    <p><small>Tag: <%@listing.tag_list.each do |tag| %>
+      <%= link_to tag, tagged_path(tag: tag) %>
+    <%end%></small></p>
+  </div>
+</section>

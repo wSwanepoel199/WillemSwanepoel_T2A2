@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+tag = ["High Fantasy", "Low Fantasy", "Grim Dark", "Light Hearted", "SFW", "NSFW", "18+", "PG"]
+
+tag.each do |tag|
+  ActsAsTaggableOn::Tag.new(:name => tag).save
+end
