@@ -1,6 +1,6 @@
-<section class="container">
-  <h1 class="hero-title text-center"><%=@listing.title%></h1>
-  <div class = "col row-col-sm-8 row-col-md-8 row-col-lg-8">
+<section class="container d-flex flex-column flex-md-row px-2 my-2 my-md-5">
+  <div class = "content col-12 col-md-7 col-lg-8 pr-md-3">
+    <h1 class="hero-title text-center"><%=@listing.title%></h1>
     <p><%=@listing.description%></p>
     <p>By: <%=@listing.username%></p>
     <p><small>Tag: <%@listing.tag_list.each do |tag| %>
