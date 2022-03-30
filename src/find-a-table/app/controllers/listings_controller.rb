@@ -3,20 +3,27 @@ class ListingsController < ApplicationController
   
   def index
     @listing = Listing.all
-    @listing_search= Listing.new
+    @user = User.all
   end
 
   def show
     @listing = Listing.find(params[:id])
+    @user = User.all
   end
 
   def new
     @listing = Listing.new
     @listing.user_id = current_user.id
     @listing.tag_list = []
+
+    respond_to do |format|
+      format.html  # index.html.erb
+      format.json  { render :json => ActsAsTaggableOn::Tag.most_used(10) }
+    end
   end
 
   def tagged
+    @user = User.all
     if params[:tag].present?
       @listing = Listing.tagged_with(params[:tag])
     else
@@ -25,8 +32,15 @@ class ListingsController < ApplicationController
   end
 
   def search
+    @user = User.all
     if params[:search].present?
-      @listing = Listing.global_search(params[:search])
+      css = params[:css]
+      case css
+      when "tag_list"
+        @listing = Listing.tagged_with(params[:search], :wild => true, :any => true)
+      when "title"
+        @listing = Listing.global_search(css, params[:search])
+      end
     else
       @listing = Listing.all
     end
@@ -47,6 +61,6 @@ class ListingsController < ApplicationController
   
   private
   def listing_params
-    params.require(:listing).permit(:title, :description, :user_id, :tag_list, :search)
+    params.require(:listing).permit(:title, :description, :user_id, :search, :css, tag_list: [])
   end
 end

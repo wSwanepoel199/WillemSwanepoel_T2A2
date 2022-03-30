@@ -1,19 +1,13 @@
-<h1>Listings#index</h1>
-<p>Find me in app/views/listings/index.html.erb</p>
-
 <h1 class="hero-title text-center">Listings</h1>
-<%=simple_form_for @listing_search, url: listings_path do |f|%>
-  <%=f.input :title, as: :search%>
-  <%=f.submit "Search"%>
-<%end%>
 <section class="container">
   <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-4 justify-content-center">
     <%@listing.each do |listing|%>
-      <div class="col md-4">
+      <div class="col-md-4 pt-3">
         <div class="card border-dark h-100">
           <div class="card-body">
             <h5><%=listing.title%></h5>
             <p class="card-text text-secondary"><%=truncate(listing.description, length: 50)%></p>
+            <p>By: <%=listing.username%></p>
             <p><small>Tag: 
             <%listing.tag_list.each do |tag| %>
               <%= link_to tag, tagged_path(tag: tag) %>
