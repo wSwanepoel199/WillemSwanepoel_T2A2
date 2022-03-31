@@ -1,25 +1,41 @@
+<%pp "Listing: #{@success}"%>
 <%if user_signed_in?%>
-      <%= render "listings/search_bar"%>
-    <%end%>
-<h1 class="hero-title text-center">Listings</h1>
+  <%= render "listings/search_bar"%>
+<%end%>
+<section class="container">
+  <div class="d-flex justify-content-between w-100">
+    <div>
+      <p><%= link_to "Return Default Page", listings_path(@listing), class:"btn btn-outline-primary"%></p>
+    </div>
+    <div class="flex-grow-1">
+      <h1 class="hero-title text-center align-self-center ">Listings</h1>
+    </div>
+    <div>
+      <p><%= link_to "New Listing", new_listing_path(@listing.new), class:"btn btn-outline-primary"%></p>
+    </div>
+  </div>
+</section>
 <section class="container">
   <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-4 justify-content-center">
     <%@listing.each do |listing|%>
       <div class="col-md-4 pt-3">
         <div class="card border-dark h-100">
           <% if listing.picture.attached? %>
-            <%= image_tag listing.picture, class: "thumbnail card-img top", alt: "#{listing.title} Uploaded Image" %>
+            <%= image_tag listing.picture, class: "thumbnail card-img top mh-25", alt: "#{listing.title} Uploaded Image" %>
           <%else%>
-            <%= image_tag "tabletop.jpg", class: "thumbnail card-img top", alt: "Image of Table top" %>
+            <%= image_tag "tabletop.jpg", class: "thumbnail card-img top mh-25", alt: "Image of Table top" %>
           <%end%>
           <div class="card-body d-flex flex-column">
             <h5><%=listing.title%></h5>
-            <p><small>By: <%=listing.username%></small></p>
+            <p><small>By: <% listing.user.each do |user| %>
+              <% if user.id == listing.user_id %>
+                <%= link_to user.username, profile_user_path(listing.user_id) %>
+              <%end%>
+            <%end%></small></p>
             <p class="card-text text-secondary flex-fill"><%=truncate(listing.description, length: 50)%></p>
             <p><small>Tag: <%listing.tag_list.each do |tag| %>
-              <%= link_to tag, tagged_path(tag: tag) %>
+              <%= link_to tag, listings_path(tag: tag) %>
             <%end%></small></p>
-            <% pp "LISTING PATH #{listing_path(listing.id)}"%>
             <p class="align-self-end"><%= link_to "Read More", listing_path(listing.id), class:"btn btn-outline-primary"%></p>
           </div>
         </div>

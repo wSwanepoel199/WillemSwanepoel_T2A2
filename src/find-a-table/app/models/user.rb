@@ -20,4 +20,8 @@ class User < ApplicationRecord
       where(conditions.to_h).first
     end
   end
+
+  def listing
+    Listing.all
+  end
 end
