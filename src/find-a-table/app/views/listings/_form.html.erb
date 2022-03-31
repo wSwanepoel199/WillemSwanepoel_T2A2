@@ -2,15 +2,15 @@
   <div class = "col row-col-sm-8 row-col-md-8 row-col-lg-8">
     <%= simple_form_for @listing, local: true do |f| %>
       <div class="form-group mb-3">
-        <%= f.input :title %>
+        <%= f.input :title, required: true, include_hidden: false %>
       </div>
       <div class="form-group mb-3">
         <%= f.input :tag_list, input_html: {class:"tags", multiple: "multiple", style:"width: 100%"}, wrapper_html: {class: 'tags-container'}, collection: ActsAsTaggableOn::Tag.most_used(10), value_method: :name, label_method: :name %>
       </div>
       <div class="form-group mb-3">
-        <%= f.input :description %>
+        <%= f.input :description, required: true, include_hidden: false  %>
       </div>
-      <%= f.submit "Create", class: 'btn btn-lg btn-primary'%>
+      <%= f.button :submit, class: 'btn btn-lg btn-primary'%>
     <% end %>
   </div>
 </section>

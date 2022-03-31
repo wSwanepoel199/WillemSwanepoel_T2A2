@@ -38,23 +38,31 @@ class ListingsController < ApplicationController
 
   def create
     @listing = current_user.listings.new(listing_params)
-    if @listing.save
-      @listing.save
-      redirect_to @listing
-    else
-      pp @listing.errors
+    if params[:title].blank?
       render "new"
+    else
+      if @listing.save
+        @listing.save
+        redirect_to @listing
+      else
+        pp @listing.errors
+        render "new"
+      end
     end
   end
 
   def update
     @listing.update(listing_params)
-    if @listing.save
-      @listing.save
-      redirect_to @listing
-    else
-      pp @listing.errors
+    if params[:title].blank?
       render "edit"
+    else
+      if @listing.save
+        @listing.save
+        redirect_to @listing
+      else
+        pp @listing.errors
+        render "edit"
+      end
     end
   end
 
@@ -62,6 +70,7 @@ class ListingsController < ApplicationController
   end
 
   def destroy
+    @listing.destroy
   end
   
   private
