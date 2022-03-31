@@ -11,6 +11,7 @@ class Listing < ApplicationRecord
       }
     }
   }
+  has_one_attached :picture
 
   def username
     user.username

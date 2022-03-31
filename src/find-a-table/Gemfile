@@ -51,10 +51,11 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem "devise"
+gem 'devise'
 gem 'rack-mini-profiler', '~> 2.0'
 gem 'simple_form'
 gem 'acts-as-taggable-on', '~> 9.0'
 gem 'country_select'
 gem 'pg_search'
-gem "select2-rails"
+gem 'select2-rails'
+gem "aws-sdk-s3", "~> 1.113"

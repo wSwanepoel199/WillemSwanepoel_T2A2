@@ -37,10 +37,9 @@ class ListingsController < ApplicationController
   end
 
   def create
-    @listing = current_user.listings.new(listing_params)
+    @listing = Listing.new(listing_params)
     if params[:title].blank?
-      render "new"
-    else
+      @listing = current_user.listings.new(listing_params)
       if @listing.save
         @listing.save
         redirect_to @listing
@@ -48,14 +47,15 @@ class ListingsController < ApplicationController
         pp @listing.errors
         render "new"
       end
+    else
+      pp @listing
+      render "new"
     end
   end
 
   def update
     @listing.update(listing_params)
     if params[:title].blank?
-      render "edit"
-    else
       if @listing.save
         @listing.save
         redirect_to @listing
@@ -63,6 +63,8 @@ class ListingsController < ApplicationController
         pp @listing.errors
         render "edit"
       end
+    else
+      render "edit"
     end
   end
 
@@ -75,7 +77,7 @@ class ListingsController < ApplicationController
   
   private
   def listing_params
-    params.require(:listing).permit(:title, :description, :search, :css, tag_list: [])
+    params.require(:listing).permit(:title, :description, :picture, :search, :css, tag_list: [])
   end
   def set_listing
     @listing = Listing.find(params[:id])
