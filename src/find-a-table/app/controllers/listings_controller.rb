@@ -1,25 +1,16 @@
 class ListingsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :edit]
+  before_action :authenticate_user!, except: [:index, :show, :tagged, :search]
+  before_action :set_listing, only: [:show, :edit, :update, :destroy]
   
   def index
     @listing = Listing.all
-    @user = User.all
   end
 
   def show
-    @listing = Listing.find(params[:id])
-    @user = User.all
   end
 
   def new
     @listing = Listing.new
-    @listing.user_id = current_user.id
-    @listing.tag_list = []
-
-    respond_to do |format|
-      format.html  # index.html.erb
-      format.json  { render :json => ActsAsTaggableOn::Tag.most_used(10) }
-    end
   end
 
   def tagged
@@ -32,7 +23,6 @@ class ListingsController < ApplicationController
   end
 
   def search
-    @user = User.all
     if params[:search].present?
       css = params[:css]
       case css
@@ -47,20 +37,38 @@ class ListingsController < ApplicationController
   end
 
   def create
-    @listing = Listing.new(listing_params)
+    @listing = current_user.listings.new(listing_params)
     if @listing.save
       @listing.save
       redirect_to @listing
     else
-      render :new
+      pp @listing.errors
+      render "new"
+    end
+  end
+
+  def update
+    @listing.update(listing_params)
+    if @listing.save
+      @listing.save
+      redirect_to @listing
+    else
+      pp @listing.errors
+      render "edit"
     end
   end
 
   def edit
   end
+
+  def destroy
+  end
   
   private
   def listing_params
-    params.require(:listing).permit(:title, :description, :user_id, :search, :css, tag_list: [])
+    params.require(:listing).permit(:title, :description, :search, :css, tag_list: [])
+  end
+  def set_listing
+    @listing = Listing.find(params[:id])
   end
 end

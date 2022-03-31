@@ -16,7 +16,8 @@
  *= require select2-bootstrap
  */
  @import 'bootstrap/scss/bootstrap';
+ @import 'select2';
 
  .alert{
-   margin: 0
+   margin: 0;
  }

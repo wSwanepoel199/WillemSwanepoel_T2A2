@@ -1,7 +1,3 @@
-<%if user_signed_in?%>
-      <%= render "listings/search_bar"%>
-    <%end%>
-<h1 class="hero-title text-center">Listings</h1>
 <section class="container">
   <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-4 justify-content-center">
     <%@listing.each do |listing|%>
