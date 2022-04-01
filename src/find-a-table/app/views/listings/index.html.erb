@@ -1,17 +1,14 @@
-<%pp "Listing: #{@success}"%>
-<%if user_signed_in?%>
-  <%= render "listings/search_bar"%>
-<%end%>
-<section class="container">
+<%@search = true%>
+<section class="container pt-4">
   <div class="d-flex justify-content-between w-100">
     <div>
-      <p><%= link_to "Return Default Page", listings_path(@listing), class:"btn btn-outline-primary"%></p>
+      <p><%= link_to "Return Default Page", listings_path, class:"btn btn-outline-primary"%></p>
     </div>
     <div class="flex-grow-1">
       <h1 class="hero-title text-center align-self-center ">Listings</h1>
     </div>
     <div>
-      <p><%= link_to "New Listing", new_listing_path(@listing.new), class:"btn btn-outline-primary"%></p>
+      <p><%= link_to "New Listing", new_listing_path, class:"btn btn-outline-primary"%></p>
     </div>
   </div>
 </section>

@@ -39,7 +39,11 @@ class ListingsController < ApplicationController
         @listing = Listing.tagged_with(params[:search], :wild => true, :any => true)
       when "title"
         @params = params[:search].downcase
-        @listing = Listing.all.where("lower(title) LIKE :search", search: "%#{@params}%")
+        @listing = Listing.where("lower(title) LIKE ?", "%#{@params}%")
+      when "user"
+        @params = params[:search].downcase
+        @listing = Listing.joins(:user).where("lower(username) LIKE ?", "%#{@params}%")
+
       else
         @listing = Listing.all
         flash[:alert] = "Could not find search"

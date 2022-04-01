@@ -37,9 +37,10 @@
         </button>
       </div>
     <%end%>
-    <div class="mb-4 mt-4">
-      <%=link_to "Back", :back, class:"btn btn-outline-primary mx-2 float-left" %>
-    </div>
+    <%if user_signed_in? && @search == true%>
+      <%= render "shared/search_bar"%>
+    <%end%>
     <%= yield %>
+    </div>
   </body>
 </html>
