@@ -5,7 +5,7 @@
       <h5><%= @user.email%></h5>
     </div>
   </div>
-  <h3>All Campaigns <%= @user.username %> is reqruiting for;</h3>
+  <h3>All Games <%= @user.username %> is recruiting for;</h3>
     <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-4 justify-content-center">
       <%@user.listing.each do |listing|%>
         <% if listing.user_id == @user.id %>
