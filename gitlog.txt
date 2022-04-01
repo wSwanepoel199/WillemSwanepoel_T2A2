@@ -1,3 +1,167 @@
+commit ce007ff9b6c2a9c169cb89dc12991a167171ba7b
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Fri Apr 1 21:17:48 2022 +1100
+
+    Merged Dev, removed unneeded files hoping everything is working
+
+commit 7e1977f4625a4c76a1e42aaf4eca66792ce509b3
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Fri Apr 1 21:11:23 2022 +1100
+
+    patched delete to actually work now
+
+commit ded1a07e8f647f39d82e7023aebd29475a3d1b4b
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Fri Apr 1 14:30:30 2022 +1100
+
+    patched line of code left from experiments causing tag search not to work
+
+commit 8a6df4b037a514b7b9cbabea7431d0691dca97cc
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Fri Apr 1 14:28:18 2022 +1100
+
+    implimented pre-load for users
+
+commit 348c29951f38d83e8490459e75b281f3a580af0a
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Fri Apr 1 13:43:09 2022 +1100
+
+    still trying to get delete to redirect correctly
+
+commit d7e801b39989428fdc32081b77d488d3a8b4b0fd
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Fri Apr 1 13:37:10 2022 +1100
+
+    minor spelling mistake fix causing delete to crash site
+
+commit b5cc98e11e63add838c76ddf3f7df8e9aa123167
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Fri Apr 1 13:33:23 2022 +1100
+
+    updated gemfile.loc
+
+commit 2a80896524fb85958ebd1e67b223d95fde0e8efb
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Fri Apr 1 13:32:04 2022 +1100
+
+    final passes to correct wording from developments to actuals
+
+commit a9e25af2dac9ff383efec5627876edf7a6e9d1bc
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Fri Apr 1 13:29:22 2022 +1100
+
+    added some data validations, removed annoying buttons, they weren't needed anyway, exploiting fact I'm now doing user name searches to remove need to define users in models, added display to show off users that match search as well as displaying listings which match search
+
+commit 9dbf18f35751283c1db0485cb5925e21e02e2324
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Fri Apr 1 12:38:08 2022 +1100
+
+    moved form and search_bar to shared, only allowing search_bar to work on specified pages, Implimented a User search
+
+commit eaa41d8844211d338212dce591a38956f33cae61
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Thu Mar 31 20:30:52 2022 +1100
+
+    removed need for pg-search, removed need for search and tagged pages they where just copies of index anyway, added user profile page which lists all listings made by said user, added email of listings owner to show as point of ccontanct, made it so user name in listings index link to specific users profile and titles in users profile link to listings show
+
+commit 36cc5f22a7f2128d20a6598266cdb021bca4cf64
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Thu Mar 31 15:18:59 2022 +1100
+
+    shifted structure of procfile
+
+commit 9c24bba64305ab4fe5771856e664210914aa3bb0
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Thu Mar 31 15:12:37 2022 +1100
+
+    some routing, implimenting image uploading method using AWS and S3
+
+commit 010a2ab4082444fe995f6b30f3723fb72359bee1
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Thu Mar 31 13:38:44 2022 +1100
+
+    Patched ability to generate listings with empty titles, enabled Active Storage
+
+commit 845490464549327900863c5c713e07b482a22d72
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Thu Mar 31 12:18:57 2022 +1100
+
+    implimented some DRY by implimenteding renderable form and search bar, implimented ability to edit listings, improved on select2 appearance, general improvements to how site looks
+
+commit f434e543a98c6dbac822188f528e855faefa3005
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Wed Mar 30 20:53:49 2022 +1100
+
+    removed search bar from appearing unless signed in
+
+commit 184088d8609919ec38e621c461fb5aaa64210756
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Wed Mar 30 20:42:59 2022 +1100
+
+    Implimented working search, implimented ability to see who made listing, implimented select2 for listing creation, for user custom tags and ability to select from pre-existing tags
+
+commit a0a61ac25581f6880b949a2d11dc3fd65f7dc9b3
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Wed Mar 30 10:57:06 2022 +1100
+
+    started work on implimented search
+
+commit dd6870c5fdc50f53216a7964f8d092087c0c3bf4
+Merge: e472964 0c311f9
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Tue Mar 29 23:34:19 2022 +1100
+
+    removed unneeded controller
+
+commit 0c311f9d762f1a53d4478cf4bba5a09e1582d231
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Tue Mar 29 23:31:02 2022 +1100
+
+    deleted unneeded controller
+
+commit e4729643cdee3a93fb4d76333bce1c8a2551a42c
+Merge: cd44c67 26f943f
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Tue Mar 29 22:48:04 2022 +1100
+
+    Merge branch 'dev' into main
+
+commit 26f943f3493469bc7c2c00bd86c140f525bb4aca
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Tue Mar 29 22:45:48 2022 +1100
+
+    Playing around with bootstrap and html
+
+commit bd98d44691921f85771f0a22cf3fdc9475e89384
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Tue Mar 29 22:23:59 2022 +1100
+
+    Forgot to reimpliment path fix after removing fix during troubleshooting
+
+commit bc34c034be0f5944d8de4f9e61a1eca317ef9070
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Tue Mar 29 22:22:57 2022 +1100
+
+    patched issue where listings index was displaying each listing after generating card, also patched issue where listings index was not pointing to correct url when viewing listing
+
+commit 145e3c255ce2b10d86af32e5903f59659f47d4c4
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Tue Mar 29 21:44:34 2022 +1100
+
+    rewrote listings index, new, and show views after they where somehow deleted
+
+commit 00022f722a6d46ca34541ae4e21bbc3aa0a1d5ef
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Tue Mar 29 20:34:00 2022 +1100
+
+    removed null: false from username column
+
+commit 55bc46ea763048104e3e1f7a23e58e20af95a453
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Tue Mar 29 20:12:29 2022 +1100
+
+    Implimented Acts_As_Taggable gem to apply tags to created listings, implimented username authentication for better personalisation, Implimented welcome message to assist user in identifying if they are logged in or not, Implimented ability to display specific listings based on tags
+
 commit 14d76dcd08730a0b9e33b4a4ac3aa5941534f9f2
 Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
 Date:   Tue Mar 29 14:58:21 2022 +1100
@@ -27,6 +191,12 @@ Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
 Date:   Tue Mar 29 12:26:52 2022 +1100
 
     installed simple form, greated listings model and db, greated tags model and db, created tagging model and joined listings and tags, created assosications though models, seeded base info into tags db, started work on form views
+
+commit cd44c676e7b9b116f550d09749c5159f62253e50
+Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
+Date:   Tue Mar 29 10:48:18 2022 +1100
+
+    removed mini-profiler settings from initializers file
 
 commit 660430c438460939f466ca5a50af043d8825ac63
 Author: wSwanepoel199 <wjaco.swanepoel@gmail.com>
