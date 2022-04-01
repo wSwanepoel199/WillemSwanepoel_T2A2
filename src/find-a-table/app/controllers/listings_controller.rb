@@ -85,7 +85,7 @@ class ListingsController < ApplicationController
 
   def destroy
     @listing.destroy
-    redirect_to @listings, flash[:notice] = "Listing successfully deleted"
+    redirect_to listings_path, flash[:notice] = "Listing successfully deleted"
   end
   
   private
