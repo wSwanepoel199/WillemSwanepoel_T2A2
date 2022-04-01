@@ -5,10 +5,10 @@
         <%= f.input :title, required: true, include_hidden: false %>
       </div>
       <div class="form-group mb-3">
-        <%= f.input :tag_list, input_html: {class:"tags", multiple: "multiple", style:"width: 100%"}, wrapper_html: {class: 'tags-container'}, collection: ActsAsTaggableOn::Tag.most_used(10), value_method: :name, label_method: :name %>
+        <%= f.input :tag_list, input_html: {class:"tags", multiple: "multiple", style:"width: 100%"}, wrapper_html: {class: 'tags-container'}, collection: ActsAsTaggableOn::Tag.most_used(5), value_method: :name, label_method: :name %>
       </div>
       <div class="form-group mb-3">
-        <%= f.input :description %>
+        <%= f.input :description%>
       </div>
       <%= f.input :picture, as: :file, accept: "image/png,image/jpg,image/jpeg" %>
       <%= f.button :submit, class: 'btn btn-lg btn-primary'%>

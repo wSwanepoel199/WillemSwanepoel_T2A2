@@ -3,14 +3,15 @@ class Listing < ApplicationRecord
   has_one_attached :picture
   acts_as_taggable_on :tags
 
-  def self.search(search)
-    if search
-      where("lower(listings.title) LIKE :search OR lower(users.username) LIKE :search", search: "%#{search.downcase}%").uniq
-    else all
-    end
-  end
+  #validations
+    validates :title, presence: true
+    validates :description, length: {minimum: 10, maximum:100}
 
-  def user
-    User.all
+  # sanatiseing data
+  before_save :remove_whitespace
+  private
+  def remove_whitespace
+    self.title = self.title.strip
+    self.description = self.description.strip 
   end
 end

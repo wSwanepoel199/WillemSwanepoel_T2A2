@@ -12,11 +12,13 @@ class ListingsController < ApplicationController
       end
     else
       @listing = Listing.all
+      @user = User.all
     end
   end
 
   def show
     @listing = @listing
+    @user = User.all
   end
 
   def new
@@ -42,6 +44,7 @@ class ListingsController < ApplicationController
         @listing = Listing.where("lower(title) LIKE ?", "%#{@params}%")
       when "user"
         @params = params[:search].downcase
+        @user = User.all.where("lower(username) LIKE ?", "%#{@params}%")
         @listing = Listing.joins(:user).where("lower(username) LIKE ?", "%#{@params}%")
 
       else
@@ -52,17 +55,12 @@ class ListingsController < ApplicationController
   end
 
   def create
-    @listing = Listing.new(listing_params)
-    if params[:title].blank?
-      @listing = current_user.listings.new(listing_params)
-      if @listing.save
-        @listing.save
-        redirect_to @listing
-      else
-        pp @listing.errors
-        render "new"
-      end
+    @listing = current_user.listings.new(listing_params)
+    if @listing.save
+      @listing.save
+      redirect_to @listing
     else
+      pp @listing.errors
       render "new"
     end
   end

@@ -1,6 +1,6 @@
 <%@search = true%>
 <section class="container d-flex flex-column flex-md-row px-2 my-2 my-md-5 pt-4">
-  <% @listing.user.each do |user| %>
+  <% @user.each do |user| %>
     <% if user.id == @listing.user_id %>
       <div class="content col-12 col-md-7 col-lg-8 pr-md-3">
         <div class="col-12 p-0 main-preview mb-4">
