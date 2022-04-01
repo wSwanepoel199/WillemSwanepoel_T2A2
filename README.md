@@ -1,6 +1,6 @@
 # **TTRPG GAME FINDER**
 
-[Github Repo]("")
+[Github Repo]("https://github.com/wSwanepoel199/WillemSwanepoel_T2A2")
 [Deployed Application]("")
 
 ## **What problem is being solved?**
