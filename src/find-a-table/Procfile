@@ -1,2 +1,2 @@
 web: bundle exec rails server -p $PORT
-release: bundle bin/rails db:migrate
+release: bundle rails db:migrate
