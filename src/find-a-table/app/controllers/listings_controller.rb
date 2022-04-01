@@ -17,7 +17,7 @@ class ListingsController < ApplicationController
   end
 
   def show
-    @listing = @listing
+    @listing = set_listing
     @user = User.all
   end
 
@@ -85,7 +85,8 @@ class ListingsController < ApplicationController
 
   def destroy
     @listing.destroy
-    redirect_to listings_path, flash[:notice] = "Listing successfully deleted"
+    flash[:notice] = "Listing successfully deleted"
+    redirect_to listings_path
   end
   
   private
