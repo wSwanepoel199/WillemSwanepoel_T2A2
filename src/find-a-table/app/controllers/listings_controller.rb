@@ -11,7 +11,7 @@ class ListingsController < ApplicationController
         tagged(:tag)
       end
     else
-      @listing = Listing.all
+      @listing = Listing.all.preload(:user)
       @user = User.all
     end
   end

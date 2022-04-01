@@ -1,35 +1,31 @@
 <%@search = true%>
 <section class="container d-flex flex-column flex-md-row px-2 my-2 my-md-5 pt-4">
-  <% @user.each do |user| %>
-    <% if user.id == @listing.user_id %>
-      <div class="content col-12 col-md-7 col-lg-8 pr-md-3">
-        <div class="col-12 p-0 main-preview mb-4">
-          <% if @listing.picture.attached? %>
-            <%= image_tag @listing.picture, class: "thumbnail card-img top", alt: "#{@listing.title} Uploaded Image" %>
-          <%else%>
-            <%= image_tag "tabletop.jpg", class: "thumbnail card-img top", alt: "Image of Table top" %>
-          <%end%>
+  <div class="content col-12 col-md-7 col-lg-8 pr-md-3">
+    <div class="col-12 p-0 main-preview mb-4">
+      <% if @listing.picture.attached? %>
+        <%= image_tag @listing.picture, class: "thumbnail card-img top", alt: "#{@listing.title} Uploaded Image" %>
+      <%else%>
+        <%= image_tag "tabletop.jpg", class: "thumbnail card-img top", alt: "Image of Table top" %>
+      <%end%>
+    </div>
+  </div>
+  <div class="sidebar col-lg-4 p-0 mx-2 d-md-block">
+    <div class="mb-sm-2 mb-md-5">
+      <h1><%=@listing.title%></h1></h1>
+      <p><small>By: <%= link_to @listing.user.username, profile_user_path(@listing.user_id) %></small><br />
+      <small>Contanct via: <%= link_to @listing.user.email, profile_user_path(@listing.user_id) %></small></p>
+      <p><small>Tags: <%@listing.tag_list.each do |tag| %>
+        <%= link_to tag, tagged_path(tag: tag) %>
+      <%end%></small></p>
+    </div>
+    <div class="container mb-sm-2 mb-md-5">
+      <p><%=@listing.description%></p>
+      <% if current_user && current_user.id == @listing.user_id %>
+        <div class="d-flex justify-content-equally">
+          <%= link_to "Edit", edit_listing_path(@listing.id), class:"btn btn-outline-primary mx-2"%>
+          <%= link_to "Delete", @listing, method: :delete, class:"btn btn-outline-warning mx-2", data:{confirm: "Are you sure you want to delete listing?"}%>
         </div>
-      </div>
-      <div class="sidebar col-lg-4 p-0 mx-2 d-md-block">
-        <div class="mb-sm-2 mb-md-5">
-          <h1><%=@listing.title%></h1></h1>
-          <p><small>By: <%= link_to user.username, profile_user_path(@listing.user_id) %></small><br />
-          <small>Contanct via: <%= link_to user.email, profile_user_path(@listing.user_id) %></small></p>
-          <p><small>Tags: <%@listing.tag_list.each do |tag| %>
-            <%= link_to tag, tagged_path(tag: tag) %>
-          <%end%></small></p>
-        </div>
-        <div class="container mb-sm-2 mb-md-5">
-          <p><%=@listing.description%></p>
-          <% if current_user && current_user.id == @listing.user_id %>
-            <div class="d-flex justify-content-equally">
-              <%= link_to "Edit", edit_listing_path(@listing.id), class:"btn btn-outline-primary mx-2"%>
-              <%= link_to "Delete", @listing, method: :delete, class:"btn btn-outline-warning mx-2", data:{confirm: "Are you sure you want to delete listing?"}%>
-            </div>
-          <%end%>
-        </div>
-      </div>
-    <%end%>
-  <%end%>
+      <%end%>
+    </div>
+  </div>
 </section>

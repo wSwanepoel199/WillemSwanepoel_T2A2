@@ -15,3 +15,8 @@ class Listing < ApplicationRecord
     self.description = self.description.strip 
   end
 end
+
+
+# <p><small>Tag: <%listing.tag_list.each do |tag| %>
+#   <%= link_to tag, listings_path(tag: tag) %>
+# <%end%></small></p>

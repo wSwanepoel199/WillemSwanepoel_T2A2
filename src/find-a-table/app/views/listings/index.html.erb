@@ -31,13 +31,9 @@
           <%end%>
           <div class="card-body d-flex flex-column">
             <h5><%=listing.title%></h5>
-            <p><small>By: <% @user.each do |user| %>
-              <% if user.id == listing.user_id %>
-                <%= link_to user.username, profile_user_path(listing.user_id) %>
-              <%end%>
-            <%end%></small></p>
+            <p><small>By: <%= link_to listing.user.username, profile_user_path(listing.user_id) %></small></p>
             <p class="card-text text-secondary flex-fill"><%=truncate(listing.description, length: 50)%></p>
-            <p><small>Tag: <%listing.tag_list.each do |tag| %>
+            <p><small>Tag: <%listing.tags.each do |tag| %>
               <%= link_to tag, listings_path(tag: tag) %>
             <%end%></small></p>
             <p class="align-self-end"><%= link_to "Read More", listing_path(listing.id), class:"btn btn-outline-primary"%></p>
