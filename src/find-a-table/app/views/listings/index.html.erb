@@ -33,9 +33,9 @@
             <h5><%=listing.title%></h5>
             <p><small>By: <%= link_to listing.user.username, profile_user_path(listing.user_id) %></small></p>
             <p class="card-text text-secondary flex-fill"><%=truncate(listing.description, length: 50)%></p>
-            <p>Tags: <%listing.tags.map.each do |tag|%>
+            <p><small>Tags: <%listing.tags.map.each do |tag|%>
               <%=link_to "#{tag}, ", listings_path(tag: tag.name)%>
-            <%end%></p>
+            <%end%></small></p>
             <p class="align-self-end"><%= link_to "Read More", listing_path(listing.id), class:"btn btn-outline-primary"%></p>
           </div>
         </div>

@@ -19,8 +19,8 @@
               <div class="card-body d-flex flex-column">
                 <h5><%= link_to listing.title, listing_path(listing.id)%></h5>
                 <p class="card-text text-secondary flex-fill"><%=truncate(listing.description, length: 50)%></p>
-                <p><small>Tag: <%listing.tag_list.each do |tag| %>
-                  <%= link_to tag, tagged_path(tag: tag) %>
+                <p><small>Tags: <%@listing.tags.map.each do |tag|%>
+                  <%=link_to "#{tag}, ", listings_path(tag: tag.name)%>
                 <%end%></small></p>
                 <% pp "LISTING PATH #{listing_path(listing.id)}"%>
                 <p class="align-self-end"><%= link_to "Read More", listing_path(listing.id), class:"btn btn-outline-primary"%></p>

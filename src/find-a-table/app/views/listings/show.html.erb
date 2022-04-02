@@ -14,8 +14,8 @@
       <h1><%=@listing.title%></h1></h1>
       <p><small>By: <%= link_to @listing.user.username, profile_user_path(@listing.user_id) %></small><br />
       <small>Contanct via: <%= link_to @listing.user.email, profile_user_path(@listing.user_id) %></small></p>
-      <p><small>Tags: <%@listing.tag_list.each do |tag| %>
-        <%= link_to tag, tagged_path(tag: tag) %>
+      <p><small>Tags: <%@listing.tags.map.each do |tag|%>
+        <%=link_to "#{tag}, ", listings_path(tag: tag.name)%>
       <%end%></small></p>
     </div>
     <div class="container mb-sm-2 mb-md-5">

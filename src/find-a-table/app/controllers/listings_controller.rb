@@ -17,8 +17,6 @@ class ListingsController < ApplicationController
   end
 
   def show
-    @listing = set_listing
-    @user = User.all
   end
 
   def new
@@ -38,7 +36,7 @@ class ListingsController < ApplicationController
       css = params[:css]
       case css
       when "tag_list"
-        @listing = Listing.tagged_with(params[:search], :wild => true, :any => true)
+        @listing = Listing.tagged_with(params[:search], :wild => true, :any => true).preload(:user).includes(:tags => :taggings).map
       when "title"
         @params = params[:search].downcase
         @listing = Listing.where("lower(title) LIKE ?", "%#{@params}%")
