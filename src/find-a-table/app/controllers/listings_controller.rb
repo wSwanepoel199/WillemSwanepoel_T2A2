@@ -11,7 +11,7 @@ class ListingsController < ApplicationController
         tagged(:tag)
       end
     else
-      @listing = Listing.all.preload(:user)
+      @listing = Listing.all.preload(:user).includes(:tags => :taggings).map
       @user = User.all
     end
   end
@@ -27,7 +27,7 @@ class ListingsController < ApplicationController
 
   def tagged(tag)
     if params[:tag].present?
-      @listing = Listing.tagged_with(params[:tag])
+      @listing = Listing.tagged_with(params[:tag]).preload(:user).includes(:tags => :taggings).map
     else
       @listing = Listing.all
     end
