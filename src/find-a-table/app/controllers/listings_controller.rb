@@ -39,11 +39,11 @@ class ListingsController < ApplicationController
         @listing = Listing.tagged_with(params[:search], :wild => true, :any => true).preload(:user).includes(:tags => :taggings).map
       when "title"
         @params = params[:search].downcase
-        @listing = Listing.where("lower(title) LIKE ?", "%#{@params}%")
+        @listing = Listing.where("lower(title) LIKE ?", "%#{@params}%").preload(:user).includes(:tags => :taggings).map
       when "user"
         @params = params[:search].downcase
         @user = User.all.where("lower(username) LIKE ?", "%#{@params}%")
-        @listing = Listing.joins(:user).where("lower(username) LIKE ?", "%#{@params}%")
+        @listing = Listing.joins(:user).where("lower(username) LIKE ?", "%#{@params}%").preload(:user).includes(:tags => :taggings).map
 
       else
         @listing = Listing.all
