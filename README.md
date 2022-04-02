@@ -15,9 +15,31 @@ The target audience are individuals seeking to form groups in order to partake i
 
 ### *sitemap*
 
+[<img src="https://github.com/wSwanepoel199/WillemSwanepoel_T2A2/blob/main/docs/Sire%20Map.png?raw=true"]
+
 ### *screenshots*
 
 ### *tech stack*
+
+Frontend;
+Bootstrap
+Awesome Font
+Select2
+jQuery
+HTML
+ERB
+Simple Form
+
+Backend;
+Ruby
+Rails
+Devise
+ActsAsTaggable
+Heroku
+
+Database;
+AWS
+PostgreSQL
 
 ## **User Stories**
 
