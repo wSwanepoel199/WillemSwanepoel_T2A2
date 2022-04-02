@@ -85,4 +85,4 @@ All tables share 2 attributes, created_at and updated_at, automatically generate
 
 ## **Project Tracking**
 
-Trello was used for project manement and tracking, allowing for easy breaking down of important tasks and figuring out where to go next. Mid development DBeaver was also used to figure out how the background of the application's database was functioning allowing for figuring out task priority.
+Trello was used for project management and tracking, allowing for easy breaking down of important tasks and figuring out where to go next. Mid development DBeaver was also used to figure out how the background of the application's database was functioning allowing for figuring out task priority.
